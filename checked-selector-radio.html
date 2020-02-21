@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jQuery</title>
+    </head>
+    <body>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="submit" name="submit" value="submit"><br><br>
+        <div id="res"></div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('input[type="submit"]').click(function(){
+                    var inputChecked = $('input[type="radio"]:checked');
+                    if(inputChecked.length>0){
+                        $('#res').html(inputChecked.val()+' is checked')
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>
